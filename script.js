@@ -11,7 +11,7 @@ function loop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   update();
   draw();
-  document.body.style.background = 'url(' + canvas.toDataURL() + ')';
+  //document.body.style.background = 'url(' + canvas.toDataURL() + ')';
   requestAnimationFrame(loop);
   
 }
