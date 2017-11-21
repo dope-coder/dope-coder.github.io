@@ -1,0 +1,30 @@
+   html {
+    position: relative;
+    min-height: 100%;
+	}
+	body {
+		margin-bottom: 60px !important;
+		background-color:#ffffff;
+	}
+   
+   #outerwrapper {
+        width: 100%;
+    }
+
+    #middlewrapper {
+        width: 100%;
+        text-align: center;
+		
+
+    }
+
+    #innerwrapper {
+        margin-left: auto;
+		margin-right: auto;
+		text-align: left;
+		padding: 10px;
+		background: linear-gradient(141deg, #42E956 0%, #3BB2B8 51%, #2cb5e8 75%);
+		opacity: 0.95;
+		margin-top: 62px;
+		height: 90%;
+    }
