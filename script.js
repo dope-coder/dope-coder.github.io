@@ -11,7 +11,7 @@ function loop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   update();
   draw();
-  //document.body.style.background = 'url(' + canvas.toDataURL() + ')';
+  document.body.style.background = 'url(' + canvas.toDataURL() + ')';
   requestAnimationFrame(loop);
   
 }
@@ -92,4 +92,33 @@ function draw() {
 
 // Start
 loop();
+
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2018 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("timer").innerHTML = '<div class="card-body text-white text-center" style="min-width: 3rem;"><h2 class="display-4">'+days +'</h2><span class="card-text">Days</span></div><div class="card-body text-white text-center" style="min-width: 3rem;"><h2 class="display-4">'+ hours+'</h2><p class="card-text">Hours</p></div><div class="card-body text-white text-center" style="min-width: 4rem;"><h2 class="display-4">'+ minutes +'</h2><p class="card-text">Minutes</p></div><div class="card-body text-white text-center" style="min-width: 3rem;"><h2 class="display-4">'+seconds+'</h2><p class="card-text">Seconds</p></div>';
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "EXPIRED";
+    }
+}, 1000);
+
+
+
 });
